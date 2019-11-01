@@ -3,6 +3,8 @@
 * sl:selector
 * val:value,parameter
 
+## Please new an object before you use
+
 ## example:
 ```  html
 <!DOCTYPE html>
