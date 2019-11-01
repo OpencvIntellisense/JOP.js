@@ -63,5 +63,17 @@ class JOP{
         }
         console.log(js);
         return eval(js);
+    }
+    JOPjs(){
+        var js="";
+        for (var i in this.obj){
+            var a=this.obj[i].sl;
+            var b=this.obj[i].pro;
+            var c=this.obj[i].val;
+            var sl= "document.querySelector('"+a+"')";
+            js += sl+"."+b+"='"+c+"'; \n";
+        }
+        console.log(js);
+        return eval(js);
     }       
 }
