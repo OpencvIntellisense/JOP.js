@@ -30,6 +30,7 @@
 <article class="content"></article>
 <p id="paragraph"></p>
 
+<article class="content1"></article>
 
 <script src="../src/JOP.min.js"></script>
 <script>
@@ -137,5 +138,13 @@ var a4=
     }];
 var d4=new JOP(a4);
 d4.JOPhtml();
+//general
+var a5=
+    [{
+        "sl":".content1",
+        "pro":"innerText",
+        "val":'html碼:<p>This is p</p><a href="#"><button style="width:50px; height:50px;">#</button></a><h3>'+content+'</h3>'
+    }];
+new JOP(a5).JOPjs();
 </script>
 ```
