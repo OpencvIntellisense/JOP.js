@@ -1,0 +1,6 @@
+button:enabled{
+    background-color: greenyellow;
+}
+button:disabled {
+    background-color: gray;
+}

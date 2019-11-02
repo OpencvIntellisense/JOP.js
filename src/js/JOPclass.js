@@ -3,77 +3,65 @@ class JOP{
         this.obj=obj;
     }
     JOPcss(){
-        var js="";
         for (var i in this.obj){
             var a=this.obj[i].sl;
             var b=this.obj[i].css;
             var c=this.obj[i].val;
-            //console.log(a+' '+b+' '+c);
-            var sl= "document.querySelector('"+a+"')";
-            js += sl+".style."+String(b)+"='"+String(c)+"'; \n";
+            var sl= document.querySelector(a);
+            console.log(sl["style"][String(b)]=c);
+            sl["style"][String(b)]=c;
         }
-        console.log(js);
-        return eval(js);
     }
     JOPenabled(){
-        var js="";
         for (var i in this.obj){
             var a=this.obj[i].sl;
             var b=this.obj[i].val;
             if (b==="0"||b==="false"){
-                var c="true";
+                var c=true;
             }else if(b==="1"||b==="true"){
-                var c="false";
+                var c=false;
             }else{
                 alert('input error');
             }
-            
-            var sl= "document.querySelector('"+a+"')";
-            js += sl+".disabled="+c+"; \n";
+            var sl= document.querySelector(a);
+            console.log(sl["disabled"]=c);
+            sl.disabled=Boolean(c);
         }
-        console.log(js);
-        return eval(js);
     }
     JOPshow(){
-        var js="";
         for (var i in this.obj){
             var a=this.obj[i].sl;
             var b=this.obj[i].val;
             if (b==="0"||b==="false"){
-                var c="true";
+                var c=true;
             }else if(b==="1"||b==="true"){
-                var c="false";
+                var c=false;
             }else{
                 alert('input error');
             }
             
-            var sl= "document.querySelector('"+a+"')";
-            js += sl+".hidden="+c+"; \n";
+            var sl= document.querySelector(a);
+            console.log(sl.hidden=c);
+            sl.hidden=c;
         }
-        console.log(js);
-        return eval(js);
     } 
     JOPhtml(){
-        var js="";
         for (var i in this.obj){
             var a=this.obj[i].sl;
             var b=this.obj[i].val;
-            var sl= "document.querySelector('"+a+"')";
-            js += sl+".innerHTML='"+b+"'; \n";
+            var sl= document.querySelector(a);
+            console.log(sl.innerHTML=b);
+            sl.innerHTML=b;
         }
-        console.log(js);
-        return eval(js);
-    }
+}
     JOPjs(){
-        var js="";
         for (var i in this.obj){
             var a=this.obj[i].sl;
             var b=this.obj[i].pro;
             var c=this.obj[i].val;
-            var sl= "document.querySelector('"+a+"')";
-            js += sl+"."+b+"='"+c+"'; \n";
+            var sl= document.querySelector(a);
+            console.log(sl[String(b)]=c);
+            sl[String(b)]=c
         }
-        console.log(js);
-        return eval(js);
     }       
 }

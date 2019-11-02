@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<style>
-    button:enabled{
-        background-color: greenyellow;
-    }
-    button:disabled {
-        background-color: gray;
-    }
-</style>
-<h1>JOP框架測試</h1>
-<div class="outer">
-    <p>100pt</p>
-    <p id="inner">
-        red
-    </p>
-</div>
-<button id="btn1"></button>
-<button class="btn2"></button>
-<button id="btn3"></button>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../src/css/JOP.css" />
+    <script src="../build/JOP.min.js"></script>
+</head>
+<body>
+    <h1>JOP框架測試</h1>
+    <div class="outer">
+        <p>100pt</p>
+        <p id="inner">
+            red
+        </p>
+    </div>
+    <button id="btn1"></button>
+    <button class="btn2"></button>
+    <button id="btn3"></button>
 
-<article class="content"></article>
-<p id="paragraph"></p>
+    <article class="content"></article>
+    <p id="paragraph"></p>
 
-<article class="content1"></article>
+    <article class="content1"></article>
+</body>
 
-<script src="../src/JOP.min.js"></script>
 <script>
 /*
 sl:選擇器
@@ -83,8 +81,7 @@ val=1 :enabled
 val=false :disabled
 val=true :enabled
 */
-var a2=
-    [{
+var d2=new JOP([{
         "sl":"#btn1",
         "val":"0"
     },
@@ -95,8 +92,7 @@ var a2=
     {
         "sl":"#btn3",
         "val":"true"
-    }];
-var d2=new JOP(a2);
+    }]);
 d2.JOPenabled();
 
 /*
@@ -105,8 +101,7 @@ val=1 :show
 val=false :hidden
 val=true :show
 */
-var a3=
-    [{
+var d3=new JOP([{
         "sl":"#btn1",
         "val":"1"
     },
@@ -117,30 +112,26 @@ var a3=
     {
         "sl":"#btn3",
         "val":"1"
-    }];
-var d3=new JOP(a3);
+    }]);
 d3.JOPshow();
 
 //html
 var content="Hello World";
-var a4=
-    [{
+var d4=new JOP([{
         "sl":".content",
-        "val":'<p>This is p</p><a href="#"><button style="width:50px; height:50px;">#</button></a><h3>'+content+'</h3>'
+        "val":"<p>This is p</p><a href='#''><button style='width:50px; height:50px;'>#</button></a><h3>"+content+"</h3>"
     },
     {
         "sl":"#paragraph",
         "val": content
-    }];
-var d4=new JOP(a4);
+    }]);
 d4.JOPhtml();
 
 //general
-var a5=
-    [{
+var a5=  new JOP([{
         "sl":".content1",
         "pro":"innerText",
         "val":'html碼:<p>This is p</p><a href="#"><button style="width:50px; height:50px;">#</button></a><h3>'+content+'</h3>'
-    }];
-new JOP(a5).JOPjs();
+    }]);
+a5.JOPjs();
 </script>
