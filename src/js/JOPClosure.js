@@ -1,3 +1,11 @@
+/*!
+Copyright JOP.js All rights reserved
+-------------------------------------
+author: did1335 (Ting-Hong,CHU)
+ver: 0.0.1
+Released under the MIT license
+-------------------------------------
+*/
 var JOP = function(a) {
     this.obj = a
 };
